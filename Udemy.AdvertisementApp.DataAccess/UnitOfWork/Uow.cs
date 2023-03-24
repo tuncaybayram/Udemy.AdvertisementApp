@@ -10,7 +10,7 @@ using Udemy.AdvertisementApp.Entities;
 
 namespace Udemy.AdvertisementApp.DataAccess.UnitOfWork
 {
-    public class Uow
+    public class Uow : IUow
     {
         private readonly AdvertisementContext _context;
 
@@ -19,7 +19,7 @@ namespace Udemy.AdvertisementApp.DataAccess.UnitOfWork
             _context = context;
         }
 
-        public IRepository<T> GetRepository<T>() where T:BaseEntity
+        public IRepository<T> GetRepository<T>() where T : BaseEntity
         {
             return new Repository<T>(_context);
         }
@@ -35,4 +35,4 @@ namespace Udemy.AdvertisementApp.DataAccess.UnitOfWork
             Task SaveChangesAsync();
         }
     }
-}  
+}
