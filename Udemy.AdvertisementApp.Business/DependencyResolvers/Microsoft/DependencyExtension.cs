@@ -8,6 +8,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Udemy.AdvertisementApp.Business.Mappings.AutoMapper;
 using Udemy.AdvertisementApp.Business.ValidationRules.FluentValidation;
 using Udemy.AdvertisementApp.DataAccess.Context;
 using Udemy.AdvertisementApp.DataAccess.UnitOfWork;
@@ -25,7 +26,7 @@ namespace Udemy.AdvertisementApp.Business.DependencyResolvers.Microsoft
             });
             var mapperConfiguration = new MapperConfiguration(otp =>
             {
-                
+                otp.AddProfile(new ProvidedServiceProfile());
             });
             var mapper=mapperConfiguration.CreateMapper();
             services.AddSingleton(mapper);
