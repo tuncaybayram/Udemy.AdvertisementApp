@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Udemy.AdvertisementApp.Common.Response.Abstract;
 using Udemy.AdvertisementApp.DataAccess.UnitOfWork;
 using Udemy.AdvertisementApp.Dtos.Interfaces;
-using Udemy.AdvertisementApp.Dtos.ProvidedServiceDtos;
+using Udemy.AdvertisementApp.Dtos;
 using Udemy.AdvertisementApp.Entities;
 
 namespace Udemy.AdvertisementApp.Business.Abstract

@@ -8,11 +8,13 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Udemy.AdvertisementApp.Business.Abstract.Services;
+using Udemy.AdvertisementApp.Business.Concrete.Services;
 using Udemy.AdvertisementApp.Business.Mappings.AutoMapper;
 using Udemy.AdvertisementApp.Business.ValidationRules.FluentValidation;
 using Udemy.AdvertisementApp.DataAccess.Context;
 using Udemy.AdvertisementApp.DataAccess.UnitOfWork;
-using Udemy.AdvertisementApp.Dtos.ProvidedServiceDtos;
+using Udemy.AdvertisementApp.Dtos;
 
 namespace Udemy.AdvertisementApp.Business.DependencyResolvers.Microsoft
 {
@@ -33,6 +35,13 @@ namespace Udemy.AdvertisementApp.Business.DependencyResolvers.Microsoft
             services.AddScoped<IUow, Uow>();
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementCreateDto>, AdvertisementCreateDtoValidator>();
+            services.AddTransient<IValidator<AdvertisementUpdateDto>, AdvertisementUpdateDtoValidator>();
+
+
+            services.AddScoped<IProvidedServiceManager, ProvidedServiceManger>();
+            services.AddScoped<IAdvertisementManager, AdvertisementManager>();
+
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Udemy.AdvertisementApp.Entities
 {
-    public class ProvidedService :BaseEntity
+    public class ProvidedService : BaseEntity
     {
 
         public string Title { get; set; }

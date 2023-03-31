@@ -26,6 +26,7 @@ namespace Udemy.AdvertisementApp.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies(Configuration);
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,13 +38,12 @@ namespace Udemy.AdvertisementApp.Presentation
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
+
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
