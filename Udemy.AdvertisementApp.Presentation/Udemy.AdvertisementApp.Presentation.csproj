@@ -12,5 +12,8 @@
 	<ItemGroup>
     <ProjectReference Include="..\Udemy.AdvertisementApp.Business\Udemy.AdvertisementApp.Business.csproj" />
   </ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\Themes\" />
+	</ItemGroup>
 
 </Project>
