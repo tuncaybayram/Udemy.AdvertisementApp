@@ -19,7 +19,7 @@
                     <div class="accordion-body">
                         @Html.Raw(Model[i].Description)
 
-                        <div>
+                      @*  <div>
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <a asp-controller="Advertisement" asp-action="Send" asp-route-advertisementId="@Model[i].Id">Başvur</a>
@@ -31,7 +31,7 @@
                                 </div>
                             }
 
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>
